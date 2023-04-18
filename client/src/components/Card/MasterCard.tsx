@@ -14,7 +14,7 @@ const MasterCard = () => {
       <div className="flex items-start space-x-2">
         <div className="avatar">
           <div className="w-10 rounded-full">
-            <img src="/src/assets/fav.jpg" />
+            <img src="/assets/fav.jpg" />
           </div>
         </div>
         <div className="space-y-2">

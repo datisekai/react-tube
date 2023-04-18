@@ -56,7 +56,7 @@ const Header: FC<HeaderProps> = ({ handleSidebar }) => {
               <div className="flex items-center btn-ghost space-x-2 btn text-primary">
                 <div className="avatar">
                   <div className="w-8 rounded-full ">
-                    <img src="/src/assets/fav.jpg" />
+                    <img src="/assets/fav.jpg" />
                   </div>
                 </div>
                 <h1 className="text-lg capitalize">React Tube</h1>
@@ -80,7 +80,7 @@ const Header: FC<HeaderProps> = ({ handleSidebar }) => {
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="/src/assets/fav.jpg" />
+                  <img src="/assets/fav.jpg" />
                 </div>
               </label>
               <ul
