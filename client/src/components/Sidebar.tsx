@@ -2,6 +2,7 @@ import React from "react";
 import category from "./data/category";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, NavLink } from "react-router-dom";
+import AvatarCircle from "../pages/AvatarCircle";
 
 const Sidebar = () => {
   return (
@@ -63,11 +64,7 @@ const Sidebar = () => {
             <li key={item}>
               <Link to={`/${item}`}>
                 <div className="flex items-center space-x-4 transition-all hover:text-primary-content hover:bg-primary  px-4 py-2 rounded-md text-primary-content">
-                  <div className="avatar">
-                    <div className="w-8 rounded-full ">
-                      <img src="/src/assets/fav.jpg" />
-                    </div>
-                  </div>
+                 <AvatarCircle width="w-8"/>
                   <span className="text-md text-base-content ">evondev</span>
                 </div>
               </Link>

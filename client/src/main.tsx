@@ -1,26 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './pages/App';
 import './index.css';
+import App from './pages/App';
 
+import { Toaster } from 'react-hot-toast';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import {
   BrowserRouter,
   Route,
   Routes
 } from "react-router-dom";
 import MasterLayout from './components/layouts/MasterLayout';
-import 'react-lazy-load-image-component/src/effects/blur.css';
-import Watch from './pages/Watch';
+import History from './pages/History';
+import Liked from './pages/Liked';
+import MyVideo from './pages/MyVideo';
 import Short from './pages/Short';
 import Subcribe from './pages/Subcribe';
-import History from './pages/History';
-import MyVideo from './pages/MyVideo';
-import Liked from './pages/Liked';
+import Watch from './pages/Watch';
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
+   <>
+   <BrowserRouter>
       <Routes>
         <Route path='/' element={<MasterLayout/>}>
             <Route index element={<App/>}/>
@@ -33,5 +35,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         </Route>
       </Routes>
     </BrowserRouter>
+    <Toaster />
+    </>
   </React.StrictMode>,
 )

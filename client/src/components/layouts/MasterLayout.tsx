@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
 
@@ -9,6 +9,14 @@ const MasterLayout = () => {
   const handleSidebar = () => {
     setOpenSidebar(!openSidebar);
   };
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top:0,
+    });
+  }, [pathname]);
 
   return (
     <div className="">

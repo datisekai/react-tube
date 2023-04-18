@@ -7,6 +7,7 @@ import {
   faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AvatarCircle from "../pages/AvatarCircle";
 
 interface HeaderProps {
   handleSidebar: () => void;
@@ -54,11 +55,7 @@ const Header: FC<HeaderProps> = ({ handleSidebar }) => {
           <div className="flex-1">
             <Link to={"/"}>
               <div className="flex items-center btn-ghost space-x-2 btn text-primary">
-                <div className="avatar">
-                  <div className="w-8 rounded-full ">
-                    <img src="/assets/fav.jpg" />
-                  </div>
-                </div>
+                <AvatarCircle  />
                 <h1 className="text-lg capitalize">React Tube</h1>
               </div>
             </Link>
