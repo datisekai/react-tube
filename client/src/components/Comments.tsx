@@ -1,7 +1,7 @@
 import React from "react";
 import { faSort, faFaceSmile } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import AvatarCircle from "../pages/AvatarCircle";
+import AvatarCircle from "./AvatarCircle";
 import { generateArray } from "../utils";
 import CommentCard from "./Card/CommentCard";
 import EmojiPicker from "emoji-picker-react";

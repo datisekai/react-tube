@@ -2,7 +2,7 @@ import React from "react";
 import category from "./data/category";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, NavLink } from "react-router-dom";
-import AvatarCircle from "../pages/AvatarCircle";
+import AvatarCircle from "./AvatarCircle";
 
 const Sidebar = () => {
   return (
@@ -62,7 +62,7 @@ const Sidebar = () => {
         <ul className="space-y-2 mt-2">
           {[0, 1, 2, 3, 4, 5].map((item) => (
             <li key={item}>
-              <Link to={`/${item}`}>
+              <Link to={`/channel/1`}>
                 <div className="flex items-center space-x-4 transition-all hover:text-primary-content hover:bg-primary  px-4 py-2 rounded-md text-primary-content">
                  <AvatarCircle width="w-8"/>
                   <span className="text-md text-base-content ">evondev</span>

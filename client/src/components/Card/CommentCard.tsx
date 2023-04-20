@@ -1,5 +1,5 @@
 import React from 'react'
-import AvatarCircle from '../../pages/AvatarCircle'
+import AvatarCircle from '../AvatarCircle'
 import { faReply } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 

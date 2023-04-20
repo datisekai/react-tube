@@ -9,14 +9,20 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Share from "../Share";
 import { Link } from "react-router-dom";
+import ReactPlayer from "react-player";
 const ShortCard = () => {
   return (
     <div className="flex gap-x-1 relative">
-      <div className="flex w-full md:w-[347px] aspect-[9/13] md:aspect-[9/16]">
-        <video
-          className="w-full h-full bg-neutral rounded-md"
-          src="http://res.cloudinary.com/an-nguyen/video/upload/v1672922098/mx7xdqstg8ndthhuoerm.mp4"
-        ></video>
+      <div className="flex bg-neutral rounded-md w-full md:w-[347px] aspect-[9/13] md:aspect-[9/16]">
+        <ReactPlayer
+          width={"100%"}
+          muted={true}
+          height={"100%"}
+          url={
+            "http://res.cloudinary.com/an-nguyen/video/upload/v1672922098/mx7xdqstg8ndthhuoerm.mp4"
+          }
+          controls
+        />
       </div>
       <div className="flex flex-col justify-end absolute md:static right-1 bottom-2">
         <div className="flex flex-col items-center">

@@ -7,7 +7,7 @@ import {
   faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import AvatarCircle from "../pages/AvatarCircle";
+import AvatarCircle from "./AvatarCircle";
 
 interface HeaderProps {
   handleSidebar: () => void;

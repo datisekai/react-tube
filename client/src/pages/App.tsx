@@ -16,7 +16,7 @@ function App() {
           )
         )}
       </ul>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-4 py-4 px-2 md:p-6">
         {generateArray(20).map((item) => (
           <MasterCard key={item} />
         ))}

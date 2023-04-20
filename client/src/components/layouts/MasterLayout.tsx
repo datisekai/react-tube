@@ -39,7 +39,7 @@ const MasterLayout = () => {
         </div>
         <div className="flex-1 min-h-screen md:ml-[240px]">
           <Header handleSidebar={handleSidebar} />
-          <div className="px-2">
+          <div className="px-2 ">
             <Outlet />
           </div>
         </div>

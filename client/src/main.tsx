@@ -17,6 +17,7 @@ import MyVideo from './pages/MyVideo';
 import Short from './pages/Short';
 import Subcribe from './pages/Subcribe';
 import Watch from './pages/Watch';
+import Channel from './pages/Channel';
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -32,6 +33,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path='watched-video' element={<History/>} />
             <Route path='my-video' element={<MyVideo/>} />
             <Route path='liked-video' element={<Liked/>} />
+            <Route path='channel/:id' element={<Channel/>} />
         </Route>
       </Routes>
     </BrowserRouter>

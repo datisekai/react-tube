@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactPlayer from "react-player";
 import { generateArray } from "../utils";
 import MasterCardHorizon from "../components/Card/MasterCardHorizon";
-import AvatarCircle from "./AvatarCircle";
+import AvatarCircle from "../components/AvatarCircle";
 import {
   faThumbsUp,
   faThumbsDown,
@@ -12,6 +12,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Comments from "../components/Comments";
 import Share from "../components/Share";
+import { Link } from "react-router-dom";
 
 const html = `
 <p>
@@ -27,8 +28,8 @@ const html = `
 const Watch = () => {
   const [showMore, setShowMore] = useState(false);
   return (
-    <div className="pt-2 pb-5 space-x-4 flex items-start flex-col md:flex-row">
-      <div className="w-full md:w-[65%] aspect-video shadow-sm space-y-4 ">
+    <div className="pt-2 pb-5 gap-x-4 flex items-start flex-col lg:flex-row">
+      <div className="w-full lg:w-[65%] aspect-video shadow-sm space-y-4 ">
         <div className="bg-neutral">
           <ReactPlayer
             width={"100%"}
@@ -49,7 +50,7 @@ const Watch = () => {
           <div className="flex items-center space-x-4">
             <AvatarCircle />
             <div>
-              <h3 className="font-bold">mer màng</h3>
+              <Link to={'/channel/1'}><h3 className="font-bold link link-hover">mer màng</h3></Link>
               <span className="text-sm">6,66N người đăng ký</span>
             </div>
             <button className="btn btn-primary text-primary-content capitalize btn-md">
