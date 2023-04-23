@@ -55,7 +55,7 @@ const Header: FC<HeaderProps> = ({ handleSidebar }) => {
           <div className="flex-1">
             <Link to={"/"}>
               <div className="flex items-center btn-ghost space-x-2 btn text-primary">
-                <AvatarCircle  />
+                <AvatarCircle />
                 <h1 className="text-lg capitalize">React Tube</h1>
               </div>
             </Link>
@@ -84,8 +84,13 @@ const Header: FC<HeaderProps> = ({ handleSidebar }) => {
                 tabIndex={0}
                 className="mt-3 p-2 text-neutral-content shadow menu menu-compact dropdown-content bg-neutral rounded-box w-52"
               >
+                <Link to={"/dashboard/"}>
+                  <li>
+                    <a className="justify-between">Dashboard</a>
+                  </li>
+                </Link>
                 <li>
-                  <a className="justify-between">Profile</a>
+                  <a className="justify-between">Kênh của bạn</a>
                 </li>
                 <li>
                   <select
@@ -104,11 +109,9 @@ const Header: FC<HeaderProps> = ({ handleSidebar }) => {
                     ))}
                   </select>
                 </li>
+
                 <li>
-                  <a>Settings</a>
-                </li>
-                <li>
-                  <a>Logout</a>
+                  <a>Đăng xuất</a>
                 </li>
               </ul>
             </div>

@@ -109,7 +109,7 @@ const Watch = () => {
 
         <Comments />
       </div>
-      <div className="flex-1 mt-4 md:mt-0">
+      <div className="flex-1 mt-4 md:mt-0 space-y-1">
         {generateArray(10).map((item) => (
           <MasterCardHorizon key={item} />
         ))}

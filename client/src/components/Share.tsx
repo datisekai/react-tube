@@ -43,7 +43,7 @@ const Share: FC<ShareProps> = ({ button }) => {
       </label>
 
       <input type="checkbox" id="my-modal" className="modal-toggle" />
-      <div className="modal z-[1001] ">
+      <div className="modal z-[1000] ">
         <div className="modal-box">
           <label
             htmlFor="my-modal"

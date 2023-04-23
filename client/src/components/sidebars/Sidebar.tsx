@@ -1,8 +1,8 @@
 import React from "react";
-import category from "./data/category";
+import category from "../data/category";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, NavLink } from "react-router-dom";
-import AvatarCircle from "./AvatarCircle";
+import AvatarCircle from "../AvatarCircle";
 
 const Sidebar = () => {
   return (
@@ -60,7 +60,7 @@ const Sidebar = () => {
       <div className="">
         <h2 className="mt-2">Kênh đăng ký</h2>
         <ul className="space-y-2 mt-2">
-          {[0, 1, 2, 3, 4, 5].map((item) => (
+          {[0, 1, 2, 3, 4].map((item) => (
             <li key={item}>
               <Link to={`/channel/1`}>
                 <div className="flex items-center space-x-4 transition-all hover:text-primary-content hover:bg-primary  px-4 py-2 rounded-md text-primary-content">

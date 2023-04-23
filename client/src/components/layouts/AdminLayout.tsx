@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "../Header";
 import Sidebar from "../sidebars/Sidebar";
+import SidebarAdmin from "../sidebars/SidebarAdmin";
 
-const MasterLayout = () => {
+const AdminLayout = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
 
   const handleSidebar = () => {
@@ -14,7 +15,7 @@ const MasterLayout = () => {
 
   useEffect(() => {
     window.scrollTo({
-      top:0,
+      top: 0,
     });
   }, [pathname]);
 
@@ -29,13 +30,13 @@ const MasterLayout = () => {
         />
 
         <div
-          className={`w-[240px] py-2 px-2 transition-transform  shadow fixed top-0 left-0 bottom-0 bg-base-100 z-[1000] ${
+          className={`w-[240px] py-2 transition-transform  shadow fixed top-0 left-0 bottom-0 bg-base-100 z-[1000] ${
             openSidebar
               ? "translate-x-0"
               : "translate-x-[-100%] md:translate-x-0"
           }`}
         >
-          <Sidebar />
+          <SidebarAdmin  />
         </div>
         <div className="flex-1 min-h-screen md:ml-[240px]">
           <Header handleSidebar={handleSidebar} />
@@ -48,4 +49,4 @@ const MasterLayout = () => {
   );
 };
 
-export default MasterLayout;
+export default AdminLayout;

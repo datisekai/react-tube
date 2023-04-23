@@ -1,11 +1,12 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import AvatarCircle from "../components/AvatarCircle";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { tabChannel } from "../components/data/tab-channel";
 import { generateArray } from "../utils";
 import MasterCard from "../components/Card/MasterCard";
 import ShortChannelCard from "../components/Card/ShortChannelCard";
+import CustomChannel from "../components/modals/CustomChannel";
 
 const Channel = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -18,7 +19,7 @@ const Channel = () => {
     <div>
       <div className="">
         <LazyLoadImage
-        effect="blur"
+          effect="blur"
           src="/assets/anhbia.png"
           className="w-full aspect-[6/1]"
         />
@@ -37,9 +38,23 @@ const Channel = () => {
                 <span>2 video</span>
               </div>
             </div>
-            <button className="btn btn-primary text-primary-content normal-case">
+            {/* <button className="btn  btn-neutral  text-neutral-contentt normal-case">
               Đăng ký
-            </button>
+            </button> */}
+            <div className="flex items-center gap-x-2">
+              <CustomChannel
+                elementClick={
+                  <div className="btn btn-neutral  text-neutral-content normal-case">
+                    Tùy chỉnh kênh
+                  </div>
+                }
+              />
+              <Link to={"/upload-video"}>
+                <div className="btn btn-neutral  text-neutral-content normal-case">
+                  Upload Video
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
         <div className="">

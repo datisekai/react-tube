@@ -7,11 +7,12 @@ const MasterCardHorizon = () => {
   return (
     <div className="flex space-x-2">
       <div className="aspect-video w-[40%]">
+        <Link to={'/watch/1'}>
         <LazyLoadImage
           src={fakeImageUrl}
           effect="blur"
           className="w-full rounded-md"
-        />
+        /></Link>
       </div>
       <div className="flex-1">
         <Link to={`/watch/1`}>

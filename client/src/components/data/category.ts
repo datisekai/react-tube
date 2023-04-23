@@ -4,7 +4,11 @@ import {
   faRecordVinyl,
   faClockRotateLeft,
   faVideo,
-  faThumbsUp
+  faThumbsUp,
+  faGauge,
+  faUserTie,
+  faFilm,
+  faBriefcase,
 } from "@fortawesome/free-solid-svg-icons";
 
 const category = {
@@ -40,6 +44,28 @@ const category = {
       title: "Video đã thích",
       url: "/liked-video",
       icon: faThumbsUp,
+    },
+  ],
+  dashboard: [
+    {
+      title: "Tổng quan",
+      url: "/dashboard/",
+      icon: faGauge,
+    },
+    {
+      title: "Người dùng",
+      url: "/dashboard/user",
+      icon: faUserTie,
+    },
+    {
+      title: "Video",
+      url: "/dashboard/video",
+      icon: faFilm,
+    },
+    {
+      title: "Danh mục",
+      url: "/dashboard/category",
+      icon: faBriefcase,
     },
   ],
 };

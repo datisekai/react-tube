@@ -11,3 +11,25 @@ body{
     content: "•";
     margin: 0 4px;
 }
+
+span.lazy-load-image-background{
+    display: block !important;
+}
+
+.play-master-card{
+    display: none;
+    animation: faded ease 0.5s;
+}
+
+.image-master-card:hover .play-master-card{
+    display: flex;
+}
+
+@keyframes faded{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
