@@ -1,9 +1,11 @@
 import { Sequelize } from "sequelize";
 import config from "../config";
+import pg from 'pg'
 
 export const sequelize = new Sequelize(config.database, config.user, config.password, {
   host: config.host,
-  dialect: "postgres",
+  dialectModule:pg,
+  dialect:'postgres',
   pool: {
     max: 5,
     min: 0,
