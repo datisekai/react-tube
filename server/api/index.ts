@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
    return res.send(`<a href='https://www.facebook.com/profile.php?id=100088767194778' target='_blanl'>Datisekai</a>`)
 })
 
-app.use('/auth', AuthRoute)
+app.use('/api/auth', AuthRoute)
 
 app.listen(PORT, () => {
     console.log(`Running - ${PORT}`)

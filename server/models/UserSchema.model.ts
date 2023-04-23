@@ -24,6 +24,10 @@ const UserSchema = sequelize.define("auth_user", {
     allowNull: true,
     unique: true,
   },
+  refreshToken:{
+    type:DataTypes.STRING,
+    allowNull:true,
+  }
 });
 
 export default UserSchema;

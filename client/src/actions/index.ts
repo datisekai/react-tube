@@ -1,13 +1,13 @@
 import axios, { AxiosResponse } from "axios";
 
-export const BASE_URL = import.meta.env.BASE_URL;
+export const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export const SERVER_URL = BASE_URL + "/api";
 
 
 
-const UPLOAD_NAME = import.meta.env.UPLOAD_NAME;
-const UPLOAD_PRESET = import.meta.env.UPLOAD_PRESET;
+const UPLOAD_NAME = import.meta.env.VITE_UPLOAD_NAME;
+const UPLOAD_PRESET = import.meta.env.VITE_UPLOAD_PRESET;
 
 export const server = axios.create({
   baseURL: SERVER_URL,
@@ -26,7 +26,7 @@ export const uploadCloudinary = async (file: File) => {
 };
 
 server.interceptors.request.use((config: any) => {
-  if (config.url?.indexOf("auth") !== -1) {
+  if (config.url?.indexOf("login") !== -1) {
     return config;
   }
 
@@ -37,9 +37,11 @@ server.interceptors.request.use((config: any) => {
   }
 
 
-//   if (token) {
-//     config.headers.Authorization = `Bearer ${token}`;
-//   }
+  const token = localStorage.getItem('accessToken')
+
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
 
   return config;
 });
@@ -53,6 +55,7 @@ server.interceptors.response.use(
     if (error?.response?.status === 401 || error?.response?.status === 500) {
       if (typeof window !== "undefined") {
         window.location.href = "/login";
+        localStorage.removeItem('accessToken')
       }
     }
     return Promise.reject(error?.response?.data);

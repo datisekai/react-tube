@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { themes } from "./data/theme";
-import { useEffect, useState, FC } from "react";
+import { useEffect, useState, FC, useContext } from "react";
 import {
   faBars,
   faMagnifyingGlass,
   faArrowLeft,
+  faGear,
+  faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AvatarCircle from "./AvatarCircle";
+import { AuthContext } from "../context/AuthContext";
 
 interface HeaderProps {
   handleSidebar: () => void;
@@ -42,6 +45,17 @@ const Header: FC<HeaderProps> = ({ handleSidebar }) => {
     }
   }, [theme]);
 
+  const { user, setUser } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    setUser();
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    navigate("/login");
+  };
+
   return (
     <>
       {!openSearchMobile ? (
@@ -75,23 +89,43 @@ const Header: FC<HeaderProps> = ({ handleSidebar }) => {
               />
             </div>
             <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src="/assets/fav.jpg" />
-                </div>
+              <label
+                tabIndex={0}
+                className="btn btn-ghost gap-2 btn-circle avatar"
+              >
+                {user ? (
+                  <AvatarCircle width="w-10" />
+                ) : (
+                  <FontAwesomeIcon icon={faGear} className="text-xl" />
+                )}
               </label>
               <ul
                 tabIndex={0}
                 className="mt-3 p-2 text-neutral-content shadow menu menu-compact dropdown-content bg-neutral rounded-box w-52"
               >
-                <Link to={"/dashboard/"}>
-                  <li>
-                    <a className="justify-between">Dashboard</a>
-                  </li>
-                </Link>
-                <li>
-                  <a className="justify-between">Kênh của bạn</a>
-                </li>
+                {user && (
+                  <Link to={"/dashboard/"}>
+                    <li>
+                      <div className="justify-between">Dashboard</div>
+                    </li>
+                  </Link>
+                )}
+                {!user && (
+                  <Link to={"/login"}>
+                    <li>
+                      <div className="justify-between">Đăng nhập</div>
+                    </li>
+                  </Link>
+                )}
+
+                {user && (
+                  <Link to={`/channel/1`}>
+                    {" "}
+                    <li>
+                      <div className="justify-between">Kênh của bạn</div>
+                    </li>
+                  </Link>
+                )}
                 <li>
                   <select
                     onChange={(e) => setTheme(e.target.value)}
@@ -110,9 +144,11 @@ const Header: FC<HeaderProps> = ({ handleSidebar }) => {
                   </select>
                 </li>
 
-                <li>
-                  <a>Đăng xuất</a>
-                </li>
+                {user && (
+                  <li onClick={handleLogout}>
+                    <div>Đăng xuất</div>
+                  </li>
+                )}
               </ul>
             </div>
           </div>

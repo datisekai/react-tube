@@ -2,7 +2,7 @@ import { useState } from "react";
 import { generateArray } from "../utils";
 import MasterCard from "../components/Card/MasterCard";
 
-function App() {
+function Home() {
   const [category, setCategory] = useState('Tất cả')
 
   return (
@@ -25,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

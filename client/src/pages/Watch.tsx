@@ -29,8 +29,8 @@ const Watch = () => {
   const [showMore, setShowMore] = useState(false);
   return (
     <div className="pt-2 pb-5 gap-x-4 flex items-start flex-col lg:flex-row">
-      <div className="w-full lg:w-[65%] aspect-video shadow-sm space-y-4 ">
-        <div className="bg-neutral">
+      <div className="w-full lg:w-[65%] shadow-sm space-y-4 ">
+        <div className="bg-neutral  aspect-video ">
           <ReactPlayer
             width={"100%"}
             muted={true}
@@ -50,7 +50,9 @@ const Watch = () => {
           <div className="flex items-center space-x-4">
             <AvatarCircle />
             <div>
-              <Link to={'/channel/1'}><h3 className="font-bold link link-hover">mer màng</h3></Link>
+              <Link to={"/channel/1"}>
+                <h3 className="font-bold link link-hover">mer màng</h3>
+              </Link>
               <span className="text-sm">6,66N người đăng ký</span>
             </div>
             <button className="btn btn-primary text-primary-content capitalize btn-md">
