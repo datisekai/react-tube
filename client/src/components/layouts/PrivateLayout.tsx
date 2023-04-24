@@ -1,6 +1,6 @@
 import React, { FC, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 interface PrivateLayoutProps {
   children: React.ReactNode;
@@ -8,8 +8,11 @@ interface PrivateLayoutProps {
 
 const PrivateLayout: FC<PrivateLayoutProps> = ({ children }) => {
   const { user } = useContext(AuthContext);
-  if (!user) {
-    return <Navigate to={"/login"} replace />;
+
+  const location = useLocation();
+
+  if (user == null) {
+    return <Navigate to={`/login?redirect=${encodeURIComponent(location.pathname)}`} replace />;
   }
   return <>{children}</>;
 };

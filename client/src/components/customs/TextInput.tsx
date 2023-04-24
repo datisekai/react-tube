@@ -1,3 +1,5 @@
+import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { FC } from "react";
 import { Controller } from "react-hook-form";
 
@@ -39,10 +41,11 @@ const TextInput: FC<TextInputProps> = ({
           />
         )}
       />
-      {showError && (
-        <p className={`py-1 text-sm ${errorTextColor}`}>
-          {error[name] && error[name].message}
-        </p>
+      {showError && error[name] && (
+         <div className="text-error text-sm flex gap-2 items-center mt-2">
+         <FontAwesomeIcon icon={faCircleExclamation} />
+         <p className="text-error">{error[name] && error[name].message}</p>
+       </div>
       )}
     </>
   );

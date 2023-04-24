@@ -17,7 +17,7 @@ const UserSchema = sequelize.define("auth_user", {
   },
   is_active: {
     type: DataTypes.BOOLEAN,
-    defaultValue: true,
+    defaultValue: false,
   },
   username: {
     type: DataTypes.STRING,

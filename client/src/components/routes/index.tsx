@@ -18,6 +18,7 @@ import Login from "../../pages/Login";
 import Register from "../../pages/Register";
 import Home from "../../pages/Home";
 import PrivateLayout from "../layouts/PrivateLayout";
+import VerifyEmail from "../../pages/VerifyEmail";
 
 const Router = () => {
   return (
@@ -78,6 +79,7 @@ const Router = () => {
           </Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
+          <Route path="/verify-email" element={<VerifyEmail />}></Route>
         </Routes>
       </BrowserRouter>
     </>

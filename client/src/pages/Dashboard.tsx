@@ -45,8 +45,8 @@ const Dashboard = () => {
       </div>
       <div>
         <div
-          className="overflow-x-auto w-full mx-auto"
-          style={{ maxWidth: `${windowSize.width - 36}px` }}
+          className="overflow-x-auto "
+          // style={{ maxWidth: `${windowSize.width - 36}px` }} 
         >
           <table className="table w-full">
             {/* head */}

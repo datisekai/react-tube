@@ -1,13 +1,12 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase-admin/app";
 import { getAuth } from "firebase-admin/auth";
-import dotenv from 'dotenv'
+import config from ".";
 
-dotenv.config()
 
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_APIKEY,
+  apiKey: config.firebase_apikey,
   authDomain: "react-tube-app-e88c9.firebaseapp.com",
   projectId: "react-tube-app-e88c9",
   storageBucket: "react-tube-app-e88c9.appspot.com",

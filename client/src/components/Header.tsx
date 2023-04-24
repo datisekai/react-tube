@@ -50,7 +50,7 @@ const Header: FC<HeaderProps> = ({ handleSidebar }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    setUser();
+    setUser(null);
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
     navigate("/login");
